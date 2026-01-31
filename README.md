@@ -4,8 +4,8 @@ A fast, SEO-optimized tech blog built with Next.js App Router, TypeScript, and T
 
 ## Live Links
 
-- GitHub repo: <add your public repo URL>
-- Vercel deployment: <add your live Vercel URL>
+- GitHub repo: https://github.com/kausik11/next-demo.git
+- Vercel deployment: https://next-demo-six-green.vercel.app
 
 ## Tech Stack
 
@@ -81,7 +81,7 @@ Screenshots are stored in `screenshots/` and referenced below. Replace these pla
 
 - The API returns external image URLs, so `next.config.ts` allows the Sling Academy host via `remotePatterns`.
 - If the API is unavailable, a friendly error state is shown on the homepage.
-- Using sample API data means the URL structure is currently homepage-only; adding dedicated post routes would enable richer internal linking.
+-The URL structure is currently homepage-only.
 
 ## Project Decisions
 
