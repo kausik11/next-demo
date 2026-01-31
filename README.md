@@ -38,27 +38,38 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 
 ## Lighthouse Audits
 
-Add screenshots to `screenshots/` and update the paths below.
+Screenshots are stored in `screenshots/` and referenced below. Replace these placeholder files with your actual Lighthouse captures after running the audit locally.
 
-- Performance: `screenshots/lighthouse-performance.png`
-- Accessibility: `screenshots/lighthouse-accessibility.png`
-- Best Practices: `screenshots/lighthouse-best-practices.png`
-- SEO: `screenshots/lighthouse-seo.png`
+- Performance
+
+![Lighthouse Performance](screenshots/lighthouse-performance.png)
+
+- Accessibility
+
+![Lighthouse Accessibility](screenshots/lighthouse-accessibility.png)
+
+- Best Practices
+
+![Lighthouse Best Practices](screenshots/lighthouse-best-practices.png)
+
+- SEO
+
+![Lighthouse SEO](screenshots/lighthouse-seo.png)
 
 ## SEO Strategy
 
-- Meta tags: Implemented title + description on the layout and page, plus Open Graph and Twitter Card tags for shareability.
-- Semantic HTML: Structured with `<header>`, `<main>`, `<section>`, `<article>`, `<nav>`, `<footer>`, and `<time>` while keeping a single H1 on the page.
-- Image optimization: All images use Next.js `Image` with explicit sizes, descriptive alt text, and lazy loading (default behavior).
-- Performance optimizations: Server-side data fetching with revalidation, lean Tailwind classes, responsive images, and a minimal JS client component.
-- Structured data: JSON-LD for WebSite and Article entities is rendered on the homepage.
-- Technical SEO: `robots.txt` and `sitemap.xml` generated via App Router metadata routes.
+- Meta tags: `metadata` on the homepage includes `title` + `description` along with Open Graph and Twitter Card fields for rich previews and consistent SERP snippets.
+- Semantic HTML: The page layout uses `<header>`, `<main>`, `<section>`, `<article>`, `<nav>`, `<footer>`, and `<time>`, with a single H1 to keep hierarchy clear.
+- Image optimization: All images use `next/image` with responsive `sizes`, descriptive `alt` text, and default lazy-loading for non-critical imagery; the hero image is prioritized to improve LCP.
+- Performance optimizations: Data is fetched on the server with ISR (`revalidate: 3600`), client filtering is memoized, and article cards are progressively revealed via an `IntersectionObserver` to reduce initial rendering work.
+- Structured data: JSON-LD for WebSite and Article entities is rendered on the homepage for rich results eligibility.
+- Technical SEO: `robots.txt` and `sitemap.xml` are emitted via App Router metadata routes with normalized, absolute URLs.
 
 ## Search and Filter Implementation
 
-- Search queries are matched against `title`, `description`, and `content_text` using a normalized lower-case compare.
-- Category filtering uses all unique categories from the fetched posts, plus an `All` option.
-- The combined filter runs in a memoized selector to keep client-side interactions fast.
+- The search input matches against `title`, `description`, and `content_text` using a normalized lower-case compare.
+- Categories are derived from unique post values, with an `All` option to reset filtering.
+- The final list is computed in a memoized selector, then lazily revealed in chunks to keep UI interactions fast.
 
 ## Accessibility & UX
 
@@ -70,11 +81,20 @@ Add screenshots to `screenshots/` and update the paths below.
 
 - The API returns external image URLs, so `next.config.ts` allows the Sling Academy host via `remotePatterns`.
 - If the API is unavailable, a friendly error state is shown on the homepage.
+- Using sample API data means the URL structure is currently homepage-only; adding dedicated post routes would enable richer internal linking.
 
 ## Project Decisions
 
 - The UI is built with Tailwind CSS for fast iteration and consistent spacing.
 - Server components fetch data, while a focused client component handles search, filter, and modal behavior.
+
+## Technologies Used
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- ESLint
 
 ## Assumptions
 
