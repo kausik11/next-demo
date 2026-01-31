@@ -23,8 +23,10 @@ export default function BlogClient({ posts }: BlogClientProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const [visibleCount, setVisibleCount] = useState(6);
   const lastFocusedElement = useRef<HTMLElement | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const loadMoreRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const query = searchParams.get("q")?.trim();
@@ -56,6 +58,38 @@ export default function BlogClient({ posts }: BlogClientProps) {
       return searchable.includes(query);
     });
   }, [activeCategory, posts, searchTerm]);
+
+  useEffect(() => {
+    setVisibleCount(Math.min(6, filteredPosts.length));
+  }, [filteredPosts]);
+
+  useEffect(() => {
+    if (visibleCount >= filteredPosts.length) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setVisibleCount((current) =>
+            Math.min(current + 6, filteredPosts.length)
+          );
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    const target = loadMoreRef.current;
+    if (target) {
+      observer.observe(target);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [filteredPosts.length, visibleCount]);
+
+  const displayedPosts = filteredPosts.slice(0, visibleCount);
 
   const openModal = (post: BlogPost) => {
     lastFocusedElement.current = document.activeElement as HTMLElement;
@@ -144,7 +178,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
         </div>
       ) : (
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {filteredPosts.map((post) => (
+          {displayedPosts.map((post) => (
             <article
               id={`post-${post.id}`}
               key={post.id}
@@ -192,6 +226,16 @@ export default function BlogClient({ posts }: BlogClientProps) {
           ))}
         </div>
       )}
+
+      {filteredPosts.length > 0 && visibleCount < filteredPosts.length ? (
+        <div
+          ref={loadMoreRef}
+          className="flex items-center justify-center py-6 text-xs font-semibold uppercase tracking-[0.4em] text-slate-400"
+          aria-live="polite"
+        >
+          Loading more articles...
+        </div>
+      ) : null}
 
       {selectedPost && (
         <div

@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
-import { siteConfig } from "@/lib/site";
+import { buildUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: siteConfig.url,
+      url: buildUrl("/"),
       lastModified: new Date(),
     },
   ];

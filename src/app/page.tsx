@@ -54,6 +54,7 @@ export default async function HomePage() {
     "@type": "Article",
     headline: post.title,
     description: post.description,
+    content: post.content_text,
     image: post.photo_url,
     datePublished: post.created_at,
     dateModified: post.updated_at,
@@ -70,8 +71,7 @@ export default async function HomePage() {
               Tech Blog
             </p>
             <h1 className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
-              Engineering stories, product thinking, and the systems behind modern
-              teams.
+              Ideas, Guides, and Practical Insights
             </h1>
             <p className="text-base leading-relaxed text-slate-600">
               Explore practical insights on architecture, performance, and design.
@@ -90,9 +90,9 @@ export default async function HomePage() {
               </div>
             </div>
           </div>
-          <div className="relative min-h-[280px] overflow-hidden rounded-3xl">
+          <div className="relative min-h-[280px] overflow-hidden rounded-3xl">  
             <Image
-              src="/hero.svg"
+              src="/Hero.png"
               alt="Illustrated workspace with laptop and analytics panels"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
