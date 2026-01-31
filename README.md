@@ -5,7 +5,7 @@ A fast, SEO-optimized tech blog built with Next.js App Router, TypeScript, and T
 ## Live Links
 
 - GitHub repo: https://github.com/kausik11/next-demo.git
-- Vercel deployment: https://next-demo-six-green.vercel.app
+- Vercel deployment: https://next-demo-kappa-ivory.vercel.app/
 
 ## Tech Stack
 
@@ -33,7 +33,7 @@ npm run start
 Set the base URL for sitemap and metadata:
 
 ```
-NEXT_PUBLIC_SITE_URL= https://next-demo-six-green.vercel.app/
+NEXT_PUBLIC_SITE_URL= https://next-demo-kappa-ivory.vercel.app/
 ```
 
 ## Lighthouse Audits
