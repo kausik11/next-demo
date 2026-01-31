@@ -7,11 +7,11 @@ import { fetchBlogPosts } from "@/lib/api";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Tech Insights Hub | Modern Engineering Notes",
+  title: "Tech Insights Blogs Hub | Modern Engineering Notes",
   description:
     "A fast, SEO-optimized tech blog featuring engineering insights, product deep dives, and practical guides.",
   openGraph: {
-    title: "Tech Insights Hub | Modern Engineering Notes",
+    title: "Tech Insights Blogs Hub | Modern Engineering Notes",
     description:
       "A fast, SEO-optimized tech blog featuring engineering insights, product deep dives, and practical guides.",
     images: [

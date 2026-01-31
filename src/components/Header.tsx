@@ -15,7 +15,7 @@ export default function Header() {
           className="text-lg font-semibold tracking-tight text-slate-900"
           href="#top"
         >
-          Tech Insights Hub
+          Tech Insights Blog Hub
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-6 text-sm md:flex">
           {navItems.map((item) => (
