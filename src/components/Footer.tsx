@@ -6,7 +6,7 @@
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-10 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-slate-900">Tech Insights Hub</p>
+          <p className="text-slate-900">Tech Insights Blog Hub</p>
           <p>Fresh engineering notes, shipped weekly.</p>
         </div>
         <div className="flex flex-wrap gap-4">
@@ -17,7 +17,7 @@
             hello@techinsightshub.com
           </a>
           <span aria-hidden="true">|</span>
-          <span>© 2026 Tech Insights Hub</span>
+          <span>© 2026 Tech Insights Blog Hub</span>
         </div>
       </div>
     </footer>

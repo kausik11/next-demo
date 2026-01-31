@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-const navItems = [
-  { label: "Home", href: "#top" },
-  { label: "Latest", href: "#latest" },
-  { label: "Categories", href: "#categories" },
-  { label: "Contact", href: "#footer" },
-];
+// const navItems = [
+//   { label: "Home", href: "#top" },
+//   { label: "Latest", href: "#latest" },
+//   { label: "Categories", href: "#categories" },
+//   { label: "Contact", href: "#footer" },
+// ];
 
 export default function Header() {
   return (
@@ -17,7 +17,7 @@ export default function Header() {
         >
           Tech Insights Blog Hub
         </Link>
-        <nav aria-label="Primary" className="hidden items-center gap-6 text-sm md:flex">
+        {/* <nav aria-label="Primary" className="hidden items-center gap-6 text-sm md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -27,7 +27,7 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-        </nav>
+        </nav> */}
         <Link
           href="#latest"
           className="rounded-full border border-slate-200 bg-slate-900 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
