@@ -33,7 +33,7 @@ npm run start
 Set the base URL for sitemap and metadata:
 
 ```
-NEXT_PUBLIC_SITE_URL=https://next-demo-six-green.vercel.app/
+NEXT_PUBLIC_SITE_URL= https://next-demo-six-green.vercel.app/
 ```
 
 ## Lighthouse Audits
