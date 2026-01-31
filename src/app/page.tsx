@@ -62,7 +62,7 @@ export default async function HomePage() {
   }));
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900" id="top">
+    <div className="min-h-screen bg-slate-50 text-slate-900">
       <Header />
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 py-12">
         <section className="grid gap-8 rounded-[32px] border border-slate-200 bg-gradient-to-br from-white via-white to-slate-100 p-8 md:grid-cols-[1.1fr_0.9fr]">

@@ -122,7 +122,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
   }, [selectedPost]);
 
   return (
-    <section className="space-y-8" aria-labelledby="latest">
+    <section className="space-y-8">
       <div className="flex flex-col gap-6 rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-sm md:flex-row md:items-center md:justify-between">
         <div>
           <h2 id="latest" className="text-2xl font-semibold text-slate-900">
@@ -143,7 +143,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
         </label>
       </div>
 
-      <div className="space-y-3" id="categories">
+      <div className="space-y-3">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">
           Categories
         </p>
@@ -269,7 +269,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                 X
               </button>
             </div>
-            <div className="space-y-4 overflow-y-auto p-6" id="modal-content">
+            <div className="space-y-4 overflow-y-auto p-6">
               <div className="space-y-2">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
                   {selectedPost.category.trim()}
